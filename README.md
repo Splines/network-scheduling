@@ -3,6 +3,8 @@ A comparison of **Round-Robin** and **Fair Queuing**. Programmed as a small proj
 
 *© Dominic Plein, 11/2020*
 
+![Scheduling](media/Scheduling.svg)
+
 ## Package Simulation
 The sources that send out packages are randomized, so you get new graphs each time you run the code. Try to change the simulation by altering the parameters of `simulate_packages(...)` (called in `ìndex.py`):
 
@@ -32,7 +34,3 @@ The bright bars indicate the `waiting_time`, which is defined as the time span b
 - Python 3.7
 - [Matplotlib](https://matplotlib.org/): an awesome Python library for visualizations (and all that goes with it); check out the [examples](https://matplotlib.org/gallery/index.html), I bet there's a graph type for every use case 🙃
 - [Numpy](https://numpy.org/): "The fundamental package for scientific computing with Python"
-
-
-![Scheduling](media/Scheduling.svg)
-
