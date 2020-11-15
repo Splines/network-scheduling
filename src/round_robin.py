@@ -18,6 +18,7 @@ def next_source_number(sources) -> int:
 def round_robin(sources) -> (list, int, list):
     print('=== Round Robin ===')
     sources_out = [[], [], []]  # (start_processing_time, package_size)
+    diff_out = [[], [], []]  # (arrival_time, start_processing_time)
     data = []  # (package_size, waiting_time)
     # waiting_time = start_processing_time - arrival_time
 
@@ -39,6 +40,7 @@ def round_robin(sources) -> (list, int, list):
         package = curr_source.pop(0)
         package_size = package[1]
         sources_out[curr_source_number].append((time, package_size))
+        diff_out[curr_source_number].append((curr_source_arrival_time, (time-curr_source_arrival_time)))
         data.append((package[1], time - package[0]))
 
         time += package_size  # "process" the current package
@@ -47,4 +49,4 @@ def round_robin(sources) -> (list, int, list):
     print('Data: ', data)
 
     # the last state of the clock is the maximum time
-    return sources_out, time, data
+    return sources_out, diff_out, time, data
